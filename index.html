@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPTV Live TV + Football Streams</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>IPTV Live TV Player</h1>
+        <p>
+          Load an M3U playlist, search channels, and quickly jump to football/sports streams.
+        </p>
+      </header>
+
+      <section class="controls">
+        <div class="file-row">
+          <label for="playlistFile" class="button secondary">Choose M3U File</label>
+          <input id="playlistFile" type="file" accept=".m3u,.m3u8,text/plain" />
+          <button id="loadSample" class="button">Load bundled playlist</button>
+        </div>
+
+        <div class="filter-row">
+          <input id="searchInput" type="search" placeholder="Search by channel name or group..." />
+          <label class="checkbox">
+            <input id="footballOnly" type="checkbox" />
+            Football / Sports only
+          </label>
+        </div>
+
+        <p id="status" class="status">No playlist loaded yet.</p>
+      </section>
+
+      <section class="content">
+        <aside>
+          <h2>Channels</h2>
+          <ul id="channelList" class="channel-list"></ul>
+        </aside>
+
+        <section class="player-section">
+          <h2 id="nowPlaying">Now playing: —</h2>
+          <video id="player" controls autoplay playsinline></video>
+          <p class="hint">
+            Tip: Some streams need specific browser codecs or can be geo-restricted.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
