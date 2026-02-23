@@ -27,6 +27,7 @@ body {
 
 header,
 .controls,
+.worldwide-list,
 .content aside,
 .player-section {
   background: rgba(30, 41, 59, 0.92);
@@ -168,4 +169,52 @@ header p {
   .channel-list {
     max-height: 35vh;
   }
+}
+
+
+.worldwide-list {
+  margin-top: 1rem;
+}
+
+.worldwide-list h2 {
+  margin: 0;
+}
+
+.worldwide-list p {
+  margin: 0.35rem 0 0.85rem;
+  color: var(--muted);
+}
+
+.worldwide-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.6rem;
+}
+
+.worldwide-links li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(15, 23, 42, 0.55);
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+}
+
+.worldwide-links a {
+  color: #93c5fd;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.worldwide-links a:hover {
+  text-decoration: underline;
+}
+
+.worldwide-links small {
+  color: var(--muted);
 }

@@ -9,6 +9,7 @@ A lightweight web app to load IPTV (`.m3u/.m3u8`) playlists, browse live channel
 - Search by channel/group name
 - One-click "Football / Sports only" filter
 - Built-in HLS playback via pinned `hls.js` version
+- Curated list of free public IPTV playlists by world region/country
 - Safer channel rendering (no HTML injection from playlist metadata)
 
 ## Run locally

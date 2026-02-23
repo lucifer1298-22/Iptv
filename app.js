@@ -6,11 +6,55 @@ const playerEl = document.getElementById('player');
 const nowPlayingEl = document.getElementById('nowPlaying');
 const fileInput = document.getElementById('playlistFile');
 const loadSampleBtn = document.getElementById('loadSample');
+const worldwideListEl = document.getElementById('worldwideList');
 
 let channels = [];
 let filteredChannels = [];
 let selectedUrl = null;
 let hls = null;
+
+
+const worldwidePlaylists = [
+  { name: 'Global channels (mixed)', url: 'https://iptv-org.github.io/iptv/index.m3u', region: 'Worldwide' },
+  { name: 'Africa', url: 'https://iptv-org.github.io/iptv/regions/afr.m3u', region: 'Region' },
+  { name: 'Asia', url: 'https://iptv-org.github.io/iptv/regions/asia.m3u', region: 'Region' },
+  { name: 'Europe', url: 'https://iptv-org.github.io/iptv/regions/eur.m3u', region: 'Region' },
+  { name: 'North America', url: 'https://iptv-org.github.io/iptv/regions/nam.m3u', region: 'Region' },
+  { name: 'South America', url: 'https://iptv-org.github.io/iptv/regions/sam.m3u', region: 'Region' },
+  { name: 'United States', url: 'https://iptv-org.github.io/iptv/countries/us.m3u', region: 'Country' },
+  { name: 'United Kingdom', url: 'https://iptv-org.github.io/iptv/countries/uk.m3u', region: 'Country' },
+  { name: 'France', url: 'https://iptv-org.github.io/iptv/countries/fr.m3u', region: 'Country' },
+  { name: 'Germany', url: 'https://iptv-org.github.io/iptv/countries/de.m3u', region: 'Country' },
+  { name: 'India', url: 'https://iptv-org.github.io/iptv/countries/in.m3u', region: 'Country' },
+  { name: 'Brazil', url: 'https://iptv-org.github.io/iptv/countries/br.m3u', region: 'Country' },
+  { name: 'Iptv.ng', url: 'https://iptv.ng/', region: 'Provider' }
+];
+
+
+
+function renderWorldwidePlaylists() {
+  if (!worldwideListEl) {
+    return;
+  }
+
+  worldwideListEl.innerHTML = '';
+
+  worldwidePlaylists.forEach((playlist) => {
+    const li = document.createElement('li');
+
+    const link = document.createElement('a');
+    link.href = playlist.url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = playlist.name;
+
+    const label = document.createElement('small');
+    label.textContent = playlist.region;
+
+    li.append(link, label);
+    worldwideListEl.append(li);
+  });
+}
 
 function parseAttributes(line) {
   const attrs = {};
@@ -173,4 +217,5 @@ loadSampleBtn.addEventListener('click', loadBundledPlaylist);
 searchInput.addEventListener('input', applyFilters);
 footballOnlyInput.addEventListener('change', applyFilters);
 
+renderWorldwidePlaylists();
 renderChannelList();
