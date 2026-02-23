@@ -26,7 +26,8 @@ const worldwidePlaylists = [
   { name: 'France', url: 'https://iptv-org.github.io/iptv/countries/fr.m3u', region: 'Country' },
   { name: 'Germany', url: 'https://iptv-org.github.io/iptv/countries/de.m3u', region: 'Country' },
   { name: 'India', url: 'https://iptv-org.github.io/iptv/countries/in.m3u', region: 'Country' },
-  { name: 'Brazil', url: 'https://iptv-org.github.io/iptv/countries/br.m3u', region: 'Country' }
+  { name: 'Brazil', url: 'https://iptv-org.github.io/iptv/countries/br.m3u', region: 'Country' },
+  { name: 'Iptv.ng', url: 'https://iptv.ng/', region: 'Provider' }
 ];
 
 
